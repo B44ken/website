@@ -15,12 +15,17 @@
 <title>professional shitass</title>
 </head>
 <body>
-<div>
-
-	<h1>
-		project 27 (because projects 1-26 were catastrophic failiures) <br>
-		<a href='//snapchat.com/add/thot.nugget'><img src='snap.svg'></a>
-	</h1>
+<div class="container">
+	<div class="text">
+		<h1>project 27</h1>
+		<p>
+			projects 1-26 were catastrophic failiures <br>
+			<a href="//instagram.com/bradboratto">instagram</a>
+			<a href='//snapchat.com/add/thot.nugget'>snap</a>
+			<a href="/resume.pdf">resumé</a>
+		</p>
+	</div>
+	<img src='snap.svg'>
 </div>
 
 <style>
@@ -29,18 +34,25 @@
 		margin: 0;
 		text-align: center;
 		text-decoration: none;
-		font-size: 2vh;
+		font-size: 2.25vh;
 		color: #e4e9e9;
 		font-family: 'courier new';
 	}
-	div {
+	.container {
 		width: 360px;
 		max-width: 90vw;
 		margin: 60px auto;
 	}
 	a { color: inherit }
 	img { width: 100% }
+	::selection {
+		background: #fffc00;
+		color: black;
+	}
 </style>
-
+<script>
+	if (document.location.hash == '#snap')
+		document.location = '//snapchat.com/add/thot.nugget'
+</script>
 </body>
 </html>
