@@ -1,9 +1,0 @@
-[submodule "conv"]
-	path = conv
-	url = https://github.com/b44ken/conv
-[submodule "airmouse"]
-	path = airmouse
-	url = https://github.com/b44ken/airmouse
-[submodule "grades"]
-	path = grades
-	url = https://github.com/B44ken/grades
