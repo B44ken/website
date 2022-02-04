@@ -1,0 +1,110 @@
+<div class="container">
+	<div class="element">
+		<div id="Symbol" contenteditable="true">Fe</div>
+		<div id="Name">Iron</div>
+		<div id="AtomicNumber">26</div>
+	</div>
+</div>
+
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+body {
+	margin: 0;
+	font-family: "Roboto";
+}
+
+.element {
+	margin: 0 auto;
+	position: absolute;
+	width: 240px;
+	height: 240px;
+	border: 3px solid black;
+	top: 30px;
+	right: calc(50% - 120px);
+}
+.element [id] {
+	position: absolute;
+}
+
+#Symbol {
+	font-size: 90px;
+	font-weight: 700;
+	height: 80px;
+	top: 60px;
+	outline: none;
+}
+#AtomicNumber {
+	font-size: 40px;
+	left: 190px;
+}
+#Name {
+	font-size: 30px;
+	top: 150px;
+}
+</style>
+<script>
+var elements = []
+
+// classes don't allow for object.keys
+const PeriodicElement = data => {
+	var result = {}
+	var categories = [
+		"AtomicNumber",
+		"Symbol",
+		"Name",
+		"AtomicMass",
+		"CPKHexColor",
+		"ElectronConfiguration",
+		"Electronegativity",
+		"AtomicRadius",
+		"IonizationEnergy",
+		"ElectronAffinity",
+		"OxidationStates",
+		"StandardState",
+		"MeltingPoint",
+		"BoilingPoint",
+		"Density",
+		"GroupBlock",
+		"YearDiscovered"
+	]
+	for(var i in categories) {
+		result[categories[i]] = data[i] || null
+	}
+	result.Density = parseFloat(this.Density) || null
+	result.OxidationStates = this.OxidationStates?.split(" ")
+	return result
+}
+
+fetch("//pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON").then(r=>r.json()).then(e => {
+	for(el of e.Table.Row) {
+		elements.push(PeriodicElement(el.Cell))
+	}
+})
+
+const findElement = name => {
+	name = name.toLowerCase()
+	if(name.endsWith('.')) {
+		name = name.slice(0, -1)
+		return elements.find(e => e.Name.toLowerCase().startsWith(name))
+	} else {
+		return elements.find(e => e.Symbol.toLowerCase() == name)
+	}
+}
+
+var fields = {
+	"Name": document.getElementById('Name'),
+	"AtomicNumber": document.getElementById('AtomicNumber'),
+	"Symbol": document.getElementById('Symbol')
+}
+document.body.addEventListener('keyup', e => {
+	const found = findElement(fields.Symbol.textContent)
+	if(!found) return
+	for(v of Object.keys(found)) {
+		if(fields[v]) fields[v].textContent = found[v]
+	}
+	const length = fields.Name.textContent.length;
+	// fields.Symbol.setSelectionRange(length, length);
+	const range = document.createRange()
+})
+</script>
