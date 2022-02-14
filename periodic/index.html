@@ -81,7 +81,7 @@
 		result.Density = parseFloat(this.Density) || null
 		result.OxidationStates = result.OxidationStates?.split(" ")
 		var m = parseFloat(result.AtomicMass)
-		result.AtomicMass = `${m} (${Math.round()})` || null
+		result.AtomicMass = `${m} (${Math.round(m)})` || null
 		return result
 	}
 	fetch("//pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/JSON").then(r => r.json()).then(e => {
