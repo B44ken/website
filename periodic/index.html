@@ -80,7 +80,7 @@
 			result[categories[i]] = data[i] || null
 		result.Density = parseFloat(this.Density) || null
 		result.OxidationStates = result.OxidationStates?.split(" ")
-		var m = parseFloat(result.AtomicMass)
+		var m = parseFloat(result.AtomicMass).toPrecision(8)
 		result.AtomicMass = `${m} (${Math.round(m)})` || null
 		return result
 	}
