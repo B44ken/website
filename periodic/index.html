@@ -3,7 +3,8 @@
 		<div id="Symbol" contenteditable="true">Fe</div>
 		<div id="Name">Iron</div>
 		<div id="AtomicNumber">26</div>
-		<div id="AtomicMass">55.845 (56)</div>
+		<div id="AtomicMass">55.84 (56)</div>
+		<div id="Electronegativity">1.83</div>
 	</div>
 </div>
 
@@ -53,6 +54,8 @@
 	}
 </style>
 <script>
+	const $ = e => document.querySelector(e)
+	
 	var elements = []
 	// classes don't allow for object.keys
 	const PeriodicElement = data => {
@@ -80,7 +83,7 @@
 			result[categories[i]] = data[i] || null
 		result.Density = parseFloat(this.Density) || null
 		result.OxidationStates = result.OxidationStates?.split(" ")
-		var m = parseFloat(result.AtomicMass).toPrecision(8)
+		var m = parseFloat(result.AtomicMass)
 		result.AtomicMass = `${m} (${Math.round(m)})` || null
 		return result
 	}
@@ -98,16 +101,13 @@
 			return elements.find(e => e.Symbol.toLowerCase() == name)
 		}
 	}
-	var fields = {
-		"Name": document.getElementById('Name'),
-		"AtomicNumber": document.getElementById('AtomicNumber'),
-		"Symbol": document.getElementById('Symbol'),
-		"AtomicMass": document.getElementById('AtomicMass')
-	}
+	
 	document.body.addEventListener('keyup', e => {
-		const found = findElement(fields.Symbol.textContent)
+		var element = $('#Symbol').textContent
+		const found = findElement(element)
 		if (!found) return
 		for (v of Object.keys(found))
-			if (fields[v]) fields[v].textContent = found[v]
+			if (document.getElementById(v))
+				document.getElementById(v).textContent = found[v]
 	})
 </script>
