@@ -1,53 +1,85 @@
 <!DOCTYPE html>
-<html lang='en'>
-	<head>
-		<meta charset='UTF-8'>
-		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<script async src='https://www.googletagmanager.com/gtag/js?id=G-8P0ZKNVB9C'></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8P0ZKNVB9C');
-</script>
-<script data-ad-client="ca-pub-5454946913495374" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script src="x.js"></script>
-<title>super cool guy:)</title>
-</head>
-<body>
-<p class="container">
-idk what to do with this site lol <br>
-<a href="//github.com/b44ken">github</a>
-<a href="/grades">grades</a>
-<a href="/conv">conv</a>
-</p>
+<html lang="en">
 
-<style>
-	/* inline styles cause i'm an awful person */
-	body {
-		background: #2e2d2b;
-		margin: 0;
-		text-align: center;
-		text-decoration: none;
-		font-size: 2.25vh;
-		color: #e4e9e9;
-		font-family: 'courier new';
-	}
-	.container {
-		width: 360px;
-		max-width: 90vw;
-		margin: 60px auto;
-	}
-	a { color: inherit }
-	img { width: 100% }
-	::selection {
-		background: #fffc00;
-		color: black;
-	}
-</style>
-<script>
-	if (document.location.hash == '#snap')
-		document.location = '//snapchat.com/add/bradboratto'
-</script>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-51GWF3KRRX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-51GWF3KRRX');
+	</script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p27</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+		html,
+		body {
+			font-family: 'Josefin Sans';
+			height: 100vh;
+			background: #444;
+			margin: 0;
+		}
+
+		.card {
+			width: 600px;
+			max-width: 90%;
+			margin: 24px auto;
+			padding: 2px;
+			background: #e3e3e3;
+			border-radius: 24px;
+			text-align: center;
+		}
+
+		h1,
+		h2,
+		a {
+			font-style: italic;
+			text-align: center;
+			margin: 0;
+			color: black;
+			text-decoration-color: black;
+		}
+
+		h1 {
+			font-size: 64px;
+		}
+
+		h2 {
+			font-size: 32px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="card hero">
+		<h1>brad boratto</h1>
+	</div>
+
+	<script>
+		const makeRepoCard = data => {
+			const card = document.createElement('div')
+			card.classList.add('card')
+			card.innerHTML = `
+	<a href="${data.html_url}">
+		<h2>${data.name}</h2>
+	</a>
+	<p>${data.description}</p>`
+			document.body.appendChild(card)
+		}
+		const makeAllRepoCards = repos => {
+			for (const r in repos)
+				makeRepoCard(repos[r])
+		}
+		fetch('https://api.github.com/users/b44ken/repos')
+			.then(e => e.json())
+			.then(e => makeAllRepoCards(e))
+	</script>
 </body>
+
 </html>
