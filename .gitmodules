@@ -1,0 +1,15 @@
+[submodule "conv"]
+	path = conv
+	url = https://github.com/b44ken/conv
+[submodule "grades"]
+	path = grades
+	url = https://github.com/b44ken/grades
+[submodule "anthropocene"]
+	path = anthropocene
+	url = https://github.com/B44ken/anthropocene
+[submodule "tinkeros"]
+	path = tinkeros
+	url = https://github.com/b44ken/tinkeros
+[submodule "mapsort"]
+	path = mapsort
+	url = https://github.com/B44ken/mapsort
