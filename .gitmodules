@@ -13,3 +13,9 @@
 [submodule "mapsort"]
 	path = mapsort
 	url = https://github.com/B44ken/mapsort
+[submodule "splicey"]
+	path = splicey
+	url = https://github.com/B44ken/splicey
+[submodule "bashrc"]
+	path = bashrc
+	url = https://github.com/B44ken/bashrc
