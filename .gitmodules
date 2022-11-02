@@ -19,3 +19,6 @@
 [submodule "bashrc"]
 	path = bashrc
 	url = https://github.com/B44ken/bashrc
+[submodule "orbital"]
+	path = orbital
+	url = git@github.com:b44ken/orbital
