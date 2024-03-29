@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-51GWF3KRRX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-51GWF3KRRX');
+	</script>
+	<script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5454946913495374"
+	crossorigin="anonymous" async></script>
+	<script src="index.js" defer></script>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<nav>
+<img src="pixellated.png" alt="me, pixellated" class="pixel">
+<div class="intro">
+	<h1><a href="https://boratto.ca" class="home">brad boratto</a></h1>
+	<p>not sure what i want to put here yet. currently looking work, you can find my email in my resume<p>
+</div>
+
+<a href="https://boratto.ca/resume.pdf">resume</a>
+<a href="https://github.com/b44ken">github</a>
+
+<ul>
+	<li><a href="https://boratto.ca/conv">conv</a> (js) calculator with units</li>
+	<li><a href="https://boratto.ca/orbital">orbital</a> (js) space game, physics engine</li>
+	<li><a href="https://github.com/b44ken/osmium">osmium</a> (c++) text editor and terminal</li>
+	<li><a href="https://boratto.ca/focus">focus</a> (js) productivity time tracker</li>
+	<li><a href="https://boratto.ca/grades">grades</a> (js) grades dashboard</li>
+	<li><a href="https://github.com/b44ken/flippybit">flippybit</a> (go) console game</li>
+	<li><a href="https://boratto.ca/anthropocene">anthropocene</a> (c#) global warming school project</li>
+	<li><a href="https://boratto.ca/tinkeros">tinkeros</a> (js) web os prototype</li>
+</ul>
+</nav>
+
+</body>
+
+<iframe></iframe>
