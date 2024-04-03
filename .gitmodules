@@ -4,18 +4,9 @@
 [submodule "grades"]
 	path = grades
 	url = https://github.com/b44ken/grades
-[submodule "anthropocene"]
-	path = anthropocene
-	url = https://github.com/B44ken/anthropocene
 [submodule "tinkeros"]
 	path = tinkeros
 	url = https://github.com/b44ken/tinkeros
-[submodule "mapsort"]
-	path = mapsort
-	url = https://github.com/B44ken/mapsort
-[submodule "splicey"]
-	path = splicey
-	url = https://github.com/B44ken/splicey
 [submodule "bashrc"]
 	path = bashrc
 	url = https://github.com/B44ken/bashrc
